@@ -6,44 +6,45 @@
 	xmlns:c="http://java.sun.com/jsp/jstl/core">
 
 <h:head>
-	<link type="text/css" rel="stylesheet" href="estilo.css"/>
+	<link rel="stylesheet"
+		href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css" />
 </h:head>
 <body>
-
-	<h3>Carrinho</h3>
-	<h:form prependId="false">
-		<table border="1" cellpadding="2" cellspacing="2">
-			<tr>
-				<th>Opções</th>
-				<th>Id</th>
-				<th>Nome</th>
-				<th>Valor</th>
-				<th>Quantidade</th>
-				<th>Total</th>
-			</tr>
-			<ui:repeat var="item" value="#{carrinhoManagedBean.itens}">
+	<h:panelGroup layout="block">
+		<h3>Carrinho</h3>
+		<h:form prependId="false">
+			<table border="1" cellpadding="2" cellspacing="2">
 				<tr>
-					<td align="center"><h:commandLink value="X"
-							action="#{carrinhoManagedBean.delete(item.livro)}"></h:commandLink>
-					</td>
-					<td>#{item.livro.id}</td>
-					<td>#{item.livro.nome}</td>
-					<td>#{item.livro.valor}</td>
-					<td>#{item.quantidade}</td>
-					<td>#{item.livro.valor * item.quantidade}</td>
+					<th>Opções</th>
+					<th>Id</th>
+					<th>Nome</th>
+					<th>Valor</th>
+					<th>Quantidade</th>
+					<th>Total</th>
 				</tr>
-			</ui:repeat>
-			<tr>
-				<td colspan="5" align="right">Total</td>
-				<td>#{carrinhoManagedBean.total()}</td>
-			</tr>
-		</table>
-		<br></br>
-		<h:commandLink value="Continue Comprando"
-			action="#{livroManagedBean.index()}"></h:commandLink>
-		<h:commandLink styleClass="btn_Finalizar" value="Finalizar"
-			action="#{carrinhoManagedBean.finalizarCompra()}"></h:commandLink>
-	</h:form>
-
+				<ui:repeat var="item" value="#{carrinhoManagedBean.itens}">
+					<tr>
+						<td align="center"><h:commandLink value="X"
+								action="#{carrinhoManagedBean.delete(item.livro)}"></h:commandLink>
+						</td>
+						<td>#{item.livro.id}</td>
+						<td>#{item.livro.nome}</td>
+						<td>#{item.livro.valor}</td>
+						<td>#{item.quantidade}</td>
+						<td>#{item.livro.valor * item.quantidade}</td>
+					</tr>
+				</ui:repeat>
+				<tr>
+					<td colspan="5" align="right">Total</td>
+					<td>#{carrinhoManagedBean.total()}</td>
+				</tr>
+			</table>
+			<br></br>
+			<h:commandLink value="Continue Comprando"
+				action="#{livroManagedBean.index()}"></h:commandLink>
+			<h:commandLink styleClass="btn_Finalizar" value="Finalizar"
+				action="#{carrinhoManagedBean.finalizarCompra()}"></h:commandLink>
+		</h:form>
+	</h:panelGroup>
 </body>
 </html>
