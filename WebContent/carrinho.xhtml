@@ -1,0 +1,49 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<h:head>
+	<link type="text/css" rel="stylesheet" href="estilo.css"/>
+</h:head>
+<body>
+
+	<h3>Carrinho</h3>
+	<h:form prependId="false">
+		<table border="1" cellpadding="2" cellspacing="2">
+			<tr>
+				<th>Opções</th>
+				<th>Id</th>
+				<th>Nome</th>
+				<th>Valor</th>
+				<th>Quantidade</th>
+				<th>Total</th>
+			</tr>
+			<ui:repeat var="item" value="#{carrinhoManagedBean.itens}">
+				<tr>
+					<td align="center"><h:commandLink value="X"
+							action="#{carrinhoManagedBean.delete(item.produto)}"></h:commandLink>
+					</td>
+					<td>#{item.produto.id}</td>
+					<td>#{item.produto.nome}</td>
+					<td>#{item.produto.valor}</td>
+					<td>#{item.quantidade}</td>
+					<td>#{item.produto.valor * item.quantidade}</td>
+				</tr>
+			</ui:repeat>
+			<tr>
+				<td colspan="5" align="right">Total</td>
+				<td>#{carrinhoManagedBean.total()}</td>
+			</tr>
+		</table>
+		<br></br>
+		<h:commandLink value="Continue Comprando"
+			action="#{produtoManagedBean.index()}"></h:commandLink>
+		<h:commandLink styleClass="btn_Finalizar" value="Finalizar"
+			action="#{carrinhoManagedBean.finalizarCompra()}"></h:commandLink>
+	</h:form>
+
+</body>
+</html>

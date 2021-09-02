@@ -1,0 +1,47 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:c="http://java.sun.com/jsp/jstl/core">
+
+<h:head></h:head>
+<body>
+
+	<h3>Lista de Produtos</h3>
+	<h:form prependId="false">
+		<h:dataTable var="produto" value="#{produtoManagedBean.produtos}"
+			border="1" cellpadding="2" cellspacing="2">
+			<h:column>
+				<f:facet name="header">Id</f:facet>
+				#{produto.id}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Nome</f:facet>
+				#{produto.nome}
+			</h:column>
+<!-- 			<h:column>
+				<f:facet name="header">Description</f:facet>
+				#{product.description}
+			</h:column> -->
+			<h:column>
+				<f:facet name="header">Preço</f:facet>
+				#{produto.valor}
+			</h:column>
+			<h:column>
+				<f:facet name="header">Quantidade</f:facet>
+				#{produto.quantidade}
+			</h:column>
+<!-- 			<h:column>
+				<f:facet name="header">Status</f:facet>
+				#{product.status}
+			</h:column> -->
+			<h:column>
+				<f:facet name="header">Opções</f:facet>
+				<h:commandLink value="Comprar Agora" action="#{carrinhoManagedBean.comprar(produto)}"></h:commandLink>
+			</h:column>
+		</h:dataTable>
+	</h:form>
+
+</body>
+</html>
