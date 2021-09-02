@@ -5,44 +5,44 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
-import model.Produto;
+import model.Livro;
 import utils.JPAUtil;
 
-public class ProdutoDoa {
+public class LivroDAO {
 
 	private static final EntityManager manager = JPAUtil.getEntityManager();
 
-	public Produto getById(int id) {
+	public Livro getById(int id) {
 
-		return manager.find(Produto.class, id);
+		return manager.find(Livro.class, id);
 
 	}
 
-//	public List<Produto> findAll() {
+//	public List<Livro> findAll() {
 //
-//		String jpql = "select p from produto a";
-//		TypedQuery<Produto> consulta = manager.createQuery(jpql, Produto.class);
+//		String jpql = "select p from livro a";
+//		TypedQuery<Livro> consulta = manager.createQuery(jpql, Livro.class);
 //		return consulta.getResultList();
 //
 //	}
 
-	public List<Produto> findAll() {
-		TypedQuery<Produto> query = manager.createQuery("from Produto", Produto.class);
+	public List<Livro> findAll() {
+		TypedQuery<Livro> query = manager.createQuery("from Livro", Livro.class);
 		return query.getResultList();
 	}
 
-	public void salvar(Produto produto) {
+	public void salvar(Livro livro) {
 
 		manager.getTransaction().begin();
-		manager.persist(produto);
+		manager.persist(livro);
 		manager.getTransaction().commit();
 
 	}
 
-	public void update(Produto produto) {
+	public void update(Livro livro) {
 
 		manager.getTransaction().begin();
-		manager.merge(produto);
+		manager.merge(livro);
 		manager.getTransaction().commit();
 
 	}

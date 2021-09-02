@@ -1,25 +1,25 @@
 package model;
 
-public class Item {
+public class ItemCarrinho {
 
-	private Produto produto;
+	private Livro livro;
 	private int quantidade;
 	
-	public Item() {
+	public ItemCarrinho() {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public Item(Produto produto, int quatidade) {
-		this.produto = produto;
+	public ItemCarrinho(Livro livro, int quatidade) {
+		this.livro = livro;
 		this.quantidade = quatidade;
 	}
 
-	public Produto getProduto() {
-		return produto;
+	public Livro getLivro() {
+		return livro;
 	}
 
-	public void setProduto(Produto produto) {
-		this.produto = produto;
+	public void setLivro(Livro livro) {
+		this.livro = livro;
 	}
 
 	public int getQuantidade() {

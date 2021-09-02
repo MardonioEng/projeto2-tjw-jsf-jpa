@@ -24,13 +24,13 @@
 			<ui:repeat var="item" value="#{carrinhoManagedBean.itens}">
 				<tr>
 					<td align="center"><h:commandLink value="X"
-							action="#{carrinhoManagedBean.delete(item.produto)}"></h:commandLink>
+							action="#{carrinhoManagedBean.delete(item.livro)}"></h:commandLink>
 					</td>
-					<td>#{item.produto.id}</td>
-					<td>#{item.produto.nome}</td>
-					<td>#{item.produto.valor}</td>
+					<td>#{item.livro.id}</td>
+					<td>#{item.livro.nome}</td>
+					<td>#{item.livro.valor}</td>
 					<td>#{item.quantidade}</td>
-					<td>#{item.produto.valor * item.quantidade}</td>
+					<td>#{item.livro.valor * item.quantidade}</td>
 				</tr>
 			</ui:repeat>
 			<tr>
@@ -40,7 +40,7 @@
 		</table>
 		<br></br>
 		<h:commandLink value="Continue Comprando"
-			action="#{produtoManagedBean.index()}"></h:commandLink>
+			action="#{livroManagedBean.index()}"></h:commandLink>
 		<h:commandLink styleClass="btn_Finalizar" value="Finalizar"
 			action="#{carrinhoManagedBean.finalizarCompra()}"></h:commandLink>
 	</h:form>

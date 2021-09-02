@@ -10,8 +10,8 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "produto")
-public class Produto implements Serializable{
+@Table(name = "livro")
+public class Livro implements Serializable{
 	
 	private static final long serialVersionUID = 1L;
 	
@@ -77,7 +77,7 @@ public class Produto implements Serializable{
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Produto other = (Produto) obj;
+		Livro other = (Livro) obj;
 		if (id != other.id)
 			return false;
 		return true;
