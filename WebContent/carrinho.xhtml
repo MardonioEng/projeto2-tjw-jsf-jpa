@@ -10,7 +10,7 @@
 		href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.98.0/css/materialize.min.css" />
 </h:head>
 <body>
-	<h:panelGroup layout="block">
+	<h:panelGroup layout="block" styleClass="container">
 		<h3>Carrinho</h3>
 		<h:form prependId="false">
 			<table border="1" cellpadding="2" cellspacing="2">
@@ -40,10 +40,16 @@
 				</tr>
 			</table>
 			<br></br>
-			<h:commandLink value="Continue Comprando"
-				action="#{livroManagedBean.index()}"></h:commandLink>
-			<h:commandLink styleClass="btn_Finalizar" value="Finalizar"
-				action="#{carrinhoManagedBean.finalizarCompra()}"></h:commandLink>
+			<h:panelGroup layout="block" styleClass="row">
+				<h:panelGroup layout="block" styleClass="col s6 center-align">
+					<h:commandLink value="Continue Comprando"
+						action="#{livroManagedBean.index()}"></h:commandLink>
+				</h:panelGroup>
+				<h:panelGroup layout="block" styleClass="col s6 center-align">
+					<h:commandLink styleClass="btn_Finalizar" value="Finalizar"
+						action="#{carrinhoManagedBean.finalizarCompra()}"></h:commandLink>
+				</h:panelGroup>
+			</h:panelGroup>
 		</h:form>
 	</h:panelGroup>
 </body>

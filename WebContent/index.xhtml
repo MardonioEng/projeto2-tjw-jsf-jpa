@@ -10,7 +10,7 @@
 </h:head>
 <body>
 
-	<h:panelGroup layout="block">
+	<h:panelGroup layout="block"  styleClass="container">
 		<h3>BookStore - Lista de Livros</h3>
 		<h:form prependId="false">
 			<h:dataTable var="livro" value="#{livroManagedBean.livros}"
@@ -23,10 +23,7 @@
 					<f:facet name="header">Nome</f:facet>
 					#{livro.nome}
 				</h:column>
-				<!-- 			<h:column>
-					<f:facet name="header">Description</f:facet>
-					#{product.description}
-				</h:column> -->
+
 				<h:column>
 					<f:facet name="header">Preço</f:facet>
 					#{livro.valor}
@@ -35,10 +32,7 @@
 					<f:facet name="header">Quantidade</f:facet>
 					#{livro.quantidade}
 				</h:column>
-				<!-- 			<h:column>
-					<f:facet name="header">Status</f:facet>
-					#{product.status}
-				</h:column> -->
+
 				<h:column>
 					<f:facet name="header">Opções</f:facet>
 					<h:commandLink value="Comprar Agora"

@@ -9,22 +9,30 @@
 </h:head>
 
 <h:body>
-	<h:form>
-		<p:messages id="messages" />
-		<p:panelGrid columns="2">
-			<p:outputLabel for="nomeUsuario" value="Nome
-      Usuário:" />
-			<p:inputText id="nomeUsuario"
-				value="#{usuarioManagedBean.nomeUsuario}" />
+	<h:panelGroup layout="block" styleClass="container">
+		<h:form>
+			<h3>Login BookStore</h3>
 
-			<p:outputLabel for="senha" value="Senha:" />
-			<p:password id="senha" value="#{usuarioManagedBean.senha}" />
+			<p:messages id="messages" />
 
-			<p:commandButton value="Logar" icon="ui-icon-star"
-				action="#{usuarioManagedBean.validar}" ajax="false">
+			<h:outputText value="Usuário" />
+			<h:inputText id="nomeUsuario"
+				value="#{usuarioManagedBean.nomeUsuario}"></h:inputText>
+			<h:message for="nomeUsuario"></h:message>
+			<br></br>
+			<br></br>
+
+			<h:outputText value="Senha:" />
+			<h:inputSecret id="senha" value="#{usuarioManagedBean.senha}"></h:inputSecret>
+			<h:message for="senha"></h:message>
+			<br></br>
+			<br></br>
+
+			<p:commandButton value="Logar" action="#{usuarioManagedBean.validar}" ajax="false" styleClass="btn waves-effect waves-light">
 			</p:commandButton>
 
-		</p:panelGrid>
-	</h:form>
+
+		</h:form>
+	</h:panelGroup>
 </h:body>
 </html>
