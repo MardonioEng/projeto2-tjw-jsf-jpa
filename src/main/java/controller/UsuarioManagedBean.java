@@ -9,49 +9,36 @@ import javax.faces.context.FacesContext;
 @ManagedBean(name = "usuarioManagedBean")
 public class UsuarioManagedBean {
 
-	 private final static String USUARIO_NOME = "fulano";
-	 private final static String SENHA = "1234";
-	 
-	 private String nomeUsuario;
-	 private String senha;
-	
+	private static String USUARIO_NOME = "mardonio";
+	private static String SENHA = "mardonio";
 
-	  public String getNomeUsuario() {
-		return nomeUsuario;
+	private String nomeUsuario;
+	private String senha;
+
+	public String validar() {
+
+		if (!nomeUsuario.equals(USUARIO_NOME) || !senha.equals(SENHA)) {
+			FacesContext.getCurrentInstance().addMessage(null,
+					new FacesMessage(FacesMessage.SEVERITY_ERROR, "Usuário não encontrado!", "Erro no Login!"));
+			return null;
+		} else {
+			return "index?faces-redirect=true";
+		}
 	}
 
+	public String getNomeUsuario() {
+		return nomeUsuario;
+	}
 
 	public void setNomeUsuario(String nomeUsuario) {
 		this.nomeUsuario = nomeUsuario;
 	}
 
-
 	public String getSenha() {
 		return senha;
 	}
 
-
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
-
-
-	public String validar() {
-
-		  if(nomeUsuario == null || senha == null) {
-			  FacesContext.getCurrentInstance().addMessage(
-				         null,
-				         new FacesMessage(FacesMessage.SEVERITY_ERROR, "Nome ou senha não informado!",
-				           "Erro no Login!"));
-			  return null;
-		  }else if(!nomeUsuario.equals(USUARIO_NOME) || !senha.equals(SENHA)) {
-			  FacesContext.getCurrentInstance().addMessage(
-				         null,
-				         new FacesMessage(FacesMessage.SEVERITY_ERROR, "Usuário não encontrado!",
-				           "Erro no Login!"));
-			  return null;
-		  }else {
-			  return "index?faces-redirect=true";
-		  }
-	  }
 }
