@@ -26,5 +26,5 @@ Tela Carrinho de compras
 
 ##### Acesso ao sistema
 
-- Para logar como usuário deve-se executar o arquivo *src/main/webapp/login.jsp*
+- Para logar como usuário deve-se executar o arquivo *src/main/webapp/login.xhtml
   - Username/Password: mardonio
