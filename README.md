@@ -12,15 +12,15 @@ O sistema de faz uso de um banco de dados implementado em MySQL.
 
 Tela de Login
 
-![](https://github.com/MardonioEng/projeto2-tjw-jsf-jpa/blob/main/fotos-sistema/1.png)
+![](https://github.com/MardonioEng/projeto2-tjw-jsf-jpa/blob/main/fotos-sistema/1.PNG)
 
 Tela de listagem dos produtos disponíveis para compra
 
-![](https://github.com/MardonioEng/projeto2-tjw-jsf-jpa/blob/main/fotos-sistema/2.png)
+![](https://github.com/MardonioEng/projeto2-tjw-jsf-jpa/blob/main/fotos-sistema/2.PNG)
 
 Tela Carrinho de compras
 
-![](https://github.com/MardonioEng/projeto2-tjw-jsf-jpa/blob/main/fotos-sistema/3.png)
+![](https://github.com/MardonioEng/projeto2-tjw-jsf-jpa/blob/main/fotos-sistema/3.PNG)
 
 
 
